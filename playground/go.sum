@@ -1,0 +1,4 @@
+github.com/inancgumus/myhttp v0.0.0-20180506182510-475b1e2e105a h1:zNCfe9StrgdYf4gWgGQ2WgLhq1X6vNQBbevdI+GSPpQ=
+github.com/inancgumus/myhttp v0.0.0-20180506182510-475b1e2e105a/go.mod h1:afxXl/lirBpFCe9eWipM2g93n8xbkZ8pI22hjiaoTic=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
