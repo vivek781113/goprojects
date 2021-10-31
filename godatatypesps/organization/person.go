@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+type TwitterHandler = string
 type Identifiable interface {
 	ID() string
 }
@@ -31,7 +32,7 @@ func (p *Person) ID() string {
 	return "12345"
 }
 
-func (p *Person) SetTwitterhandler(handler string) error {
+func (p *Person) SetTwitterhandler(handler TwitterHandler) error {
 	if len(handler) == 0 {
 		p.twitterHandler = handler
 	} else if !strings.HasPrefix(handler, "@") {
