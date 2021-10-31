@@ -20,7 +20,8 @@ const (
 
 func main() {
 	// var p organization.Identifiable  = organization.Person{}
-	p := organization.NewPerson("Vivek", "Tiwary")
+	np := organization.NewPerson("Vivek", "Tiwary")
+	p := &np
 	err := p.SetTwitterhandler("@vivek781113")
 	if err != nil {
 		fmt.Println(err.Error())
