@@ -88,6 +88,25 @@ func ProperFractions(den int) int {
 	return cnt
 }
 
+func RemoveKDigits(s string, k int) string {
+	stack := []byte{}
+	for i := 0; i < len(s); i++ {
+		ch := s[i]
+		for k > 0 && len(stack) > 0 && stack[len(stack)-1] > ch {
+			stack = stack[:len(stack)-1]
+			k--
+		}
+		if len(stack) == 0 && ch == '0' {
+			continue
+		}
+		stack = append(stack, ch)
+	}
+	if k >= len(stack) {
+		return "0"
+	}
+	return string(stack[:len(stack)-k])
+}
+
 func HCRunFuncs() {
 
 	fmt.Printf("FractionsCount for 15 %d\n", ProperFractions(15))
