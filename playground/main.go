@@ -8,13 +8,16 @@ import (
 	"net/http"
 	"strings"
 
-	"go_playground/helpers"
-	"go_playground/leetcode"
+	"go_playground/hackerrank"
+	// "go_playground/helpers"
+	// "go_playground/leetcode"
 	"go_playground/models"
 	"go_playground/utils"
 )
 
 func main() {
+
+	hackerrank.HCRunFuncs()
 
 	fmt.Println("--------consuming rest service------")
 	//get request
@@ -109,6 +112,6 @@ func main() {
 	// fmt.Printf("merge sorted arr: %v\n", ms)
 	// inssort := helpers.InsertionSort(arr)
 	// fmt.Printf("merge sorted arr: %v\n", inssort)
-	leetcode.RunTest1()
-	helpers.RunTest(20)
+	// leetcode.RunTest1()
+	// helpers.RunTest(20)
 }
