@@ -8,16 +8,17 @@ import (
 	"net/http"
 	"strings"
 
-	"go_playground/hackerrank"
 	// "go_playground/helpers"
 	// "go_playground/leetcode"
+	"go_playground/educative"
 	"go_playground/models"
 	"go_playground/utils"
 )
 
 func main() {
 
-	hackerrank.HCRunFuncs()
+	// hackerrank.HCRunFuncs()
+	educative.BSRunTest()
 
 	fmt.Println("--------consuming rest service------")
 	//get request
