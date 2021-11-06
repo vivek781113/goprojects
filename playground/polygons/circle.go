@@ -12,3 +12,7 @@ func (c *Circle) Area() float64 {
 func (c *Circle) Perimeter() float64 {
 	return 2 * c.Rad * math.Pi
 }
+
+func (c *Circle) GetRadius() float64 {
+	return c.Rad
+}
