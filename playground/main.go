@@ -11,6 +11,7 @@ import (
 	// "go_playground/helpers"
 	// "go_playground/leetcode"
 	"go_playground/educative"
+	"go_playground/helpers"
 	"go_playground/models"
 	"go_playground/polygons"
 	"go_playground/utils"
@@ -19,6 +20,9 @@ import (
 func main() {
 
 	//
+	helpers.HeapRunTest()
+
+	//interface demo
 	c := &polygons.Circle{Rad: 3}
 	polygons.Calculate(c)
 
