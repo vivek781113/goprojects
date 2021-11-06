@@ -12,10 +12,15 @@ import (
 	// "go_playground/leetcode"
 	"go_playground/educative"
 	"go_playground/models"
+	"go_playground/polygons"
 	"go_playground/utils"
 )
 
 func main() {
+
+	//
+	c := &polygons.Circle{Rad: 3}
+	polygons.Calculate(c)
 
 	// hackerrank.HCRunFuncs()
 	educative.BSRunTest()
