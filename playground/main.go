@@ -10,11 +10,9 @@ import (
 
 	// "go_playground/helpers"
 	// "go_playground/leetcode"
-	"go_playground/educative"
-	"go_playground/helpers"
+
 	"go_playground/leetcode"
 	"go_playground/models"
-	"go_playground/polygons"
 	"go_playground/utils"
 )
 
@@ -23,14 +21,14 @@ func main() {
 	//
 	leetcode.TrieRunTest()
 	fmt.Println("---------------------")
-	helpers.HeapRunTest()
+	// helpers.HeapRunTest()
 
 	//interface demo
-	c := &polygons.Circle{Rad: 3}
-	polygons.Calculate(c)
+	// c := &polygons.Circle{Rad: 3}
+	// polygons.Calculate(c)
 
 	// hackerrank.HCRunFuncs()
-	educative.BSRunTest()
+	// educative.BSRunTest()
 
 	fmt.Println("--------consuming rest service------")
 	//get request
@@ -53,7 +51,7 @@ func main() {
 	if err := json.NewDecoder(resp.Body).Decode(&users); err != nil {
 		fmt.Printf("Error occured %v", err)
 	}
-	fmt.Printf("Users count %d\n", len(users))
+	// fmt.Printf("Users count %d\n", len(users))
 
 	//post request
 	payload, _ := json.Marshal(map[string]string{

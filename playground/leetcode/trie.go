@@ -1,5 +1,10 @@
 package leetcode
 
+import (
+	"fmt"
+	"go_playground/utils"
+)
+
 const Alphabet_Size int = 26
 
 type TrieNode struct {
@@ -44,35 +49,38 @@ func search(root *TrieNode, key string) bool {
 	return temp != nil && temp.endOfWords
 }
 
-func count(node *TrieNode, puzzle, first string, start int, met_first bool) int {
+func count(node *TrieNode, puzzle, first string, hasSeen bool) int {
 	result := 0
-	if met_first {
+	if hasSeen {
 		result += node.n
 	}
-	for i := start; i < len(puzzle); i++ {
-		if node.children[puzzle[i]-'a'] == nil {
-			continue
+
+	for i, char := range puzzle {
+		idx := char - 'a'
+		if node.children[idx] != nil {
+			result += count(node.children[idx], puzzle, first, hasSeen || (string(puzzle[i]) == first))
 		}
-		result += count(node.children[puzzle[i]-'a'], puzzle, first, i+1, (met_first || (string(puzzle[i]) == first)))
+
 	}
 	return result
 }
 
 func TrieRunTest() {
-	words := []string{"a", "as", "abel", "abilty", "act", "acort", "aces"}
 	root := getNode()
+	words := []string{"aaaa", "asas", "able", "ability", "actt", "actor", "access"}
 
-	for _, word := range words {
-		insert(root, word)
+	for i := 0; i < len(words); i++ {
+		words[i] = utils.UniqueNSort(words[i])
+		if len(words[i]) <= 7 {
+			insert(root, words[i])
+		}
 	}
-	// puzzles := []string{"aboveyz", "abrodyz", "abslute", "absoryz", "actresz", "gaswxyz"}
+	fmt.Println(words)
+	puzzles := []string{"aboveyz", "abrodyz", "abslute", "absoryz", "actresz", "gaswxyz"}
 
-	// for _, puz := range puzzles {
-	// 	first := string(puz[0])
-	// 	// fmt.Println(first)
-	// 	fmt.Printf("key: %s | exist: %d\n", puz, count(root, puz, first, 0, false))
-	// }
-	puz := "abslute"
-	first := string(puz[0])
-	count(root, puz, first, 0, false)
+	for _, puz := range puzzles {
+		first := string(puz[0])
+		// fmt.Println(first)
+		fmt.Printf("key: %s | count: %d\n", puz, count(root, puz, first, false))
+	}
 }
