@@ -12,6 +12,7 @@ import (
 	// "go_playground/leetcode"
 	"go_playground/educative"
 	"go_playground/helpers"
+	"go_playground/leetcode"
 	"go_playground/models"
 	"go_playground/polygons"
 	"go_playground/utils"
@@ -20,6 +21,8 @@ import (
 func main() {
 
 	//
+	leetcode.TrieRunTest()
+	fmt.Println("---------------------")
 	helpers.HeapRunTest()
 
 	//interface demo
@@ -72,9 +75,10 @@ func main() {
 		fmt.Println(err.Error())
 	}
 
+	// strResp := string(resBody)
 	strResp := string(resBody)
 
-	fmt.Printf("Post response: %s\n", strResp)
+	fmt.Printf("Post response: %v\n", strResp[0])
 
 	fmt.Println("---------------")
 	fmt.Println("---read/write file demo")
