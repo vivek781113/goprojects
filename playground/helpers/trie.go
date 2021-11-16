@@ -1,4 +1,4 @@
-package leetcode
+package helpers
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ type TrieNode struct {
 	n          int
 }
 
-func getNode() *TrieNode {
+func GetNode() *TrieNode {
 	node := &TrieNode{}
 	node.endOfWords = false
 	for i := 0; i < Alphabet_Size; i++ {
@@ -22,13 +22,13 @@ func getNode() *TrieNode {
 	return node
 }
 
-func insert(root *TrieNode, key string) {
+func Insert(root *TrieNode, key string) {
 	temp := root
 
 	for i := 0; i < len(key); i++ {
 		idx := key[i] - 'a'
 		if temp.children[idx] == nil {
-			temp.children[idx] = getNode()
+			temp.children[idx] = GetNode()
 		}
 		temp = temp.children[idx]
 	}
@@ -36,7 +36,7 @@ func insert(root *TrieNode, key string) {
 	temp.endOfWords = true
 }
 
-func search(root *TrieNode, key string) bool {
+func Search(root *TrieNode, key string) bool {
 	temp := root
 	for i := 0; i < len(key); i++ {
 		idx := key[i] - 'a'
@@ -66,13 +66,13 @@ func count(node *TrieNode, puzzle, first string, hasSeen bool) int {
 }
 
 func TrieRunTest() {
-	root := getNode()
+	root := GetNode()
 	words := []string{"aaaa", "asas", "able", "ability", "actt", "actor", "access"}
 
 	for i := 0; i < len(words); i++ {
 		words[i] = utils.UniqueNSort(words[i])
 		if len(words[i]) <= 7 {
-			insert(root, words[i])
+			Insert(root, words[i])
 		}
 	}
 	fmt.Println(words)
